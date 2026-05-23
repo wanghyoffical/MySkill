@@ -1,4 +1,4 @@
 interface:
   display_name: "开源学习项目侦察"
-  short_description: "寻找适合学习的实战型开源项目"
-  default_prompt: "使用 $learning-project-scout 帮我找到最多 3 个适合学习某个主题的开源项目，要求新手读得懂，同时具备真实工程架构。"
+  short_description: "寻找适合读懂和复刻的实战型开源项目"
+  default_prompt: "使用 $learning-project-scout 帮我找到最多 3 个适合读懂某个主题并可考虑小复刻的开源项目，要求新手读得懂，同时具备真实工程架构。"
