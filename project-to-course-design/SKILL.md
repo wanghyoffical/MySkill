@@ -1,168 +1,168 @@
 ---
 name: project-to-course-design
-description: Use when turning an open-source project, codebase, tutorial, or technical system into a staged learning course for beginners, resume projects, interview preparation, or becoming able to build the system independently.
+description: 当用户想把开源项目、代码库、技术教程或技术系统设计成分阶段学习课程时使用，尤其适用于新人入门、简历项目、面试准备、源码学习、二次开发或从使用者成长为系统构建者。
 ---
 
-# Project To Course Design
+# 项目课程设计
 
-## Core Principle
+## 核心原则
 
-Design the course as an ability-transfer system, not as a source-code walkthrough.
+把课程设计成“能力迁移系统”，而不是源码导读。
 
-Start from the final capability the learner must demonstrate, then work backward into staged milestones. Each milestone should combine concept learning, code verification, abstraction, and a concrete deliverable.
+先定义学习者最终必须证明自己具备什么能力，再倒推出阶段性节点。每个节点都必须同时包含概念理解、代码验证、抽象升级和具体产物。
 
-## First Step: Confirm The End Goal
+## 第一步：确认最终目标
 
-Do not design the course until the final purpose is clear.
+最终目的不清楚时，不要直接设计课程。
 
-Confirm:
-- Final deliverable: resume project, interview readiness, source-code mastery, extension work, open-source contribution, or internal training.
-- Learner baseline: language, framework, domain, and engineering experience.
-- Time budget: days, weeks, or months.
-- Depth target: can use, can modify, can rebuild, can explain, or can defend in interviews.
+先确认：
+- 最终产物：简历项目、面试能力、源码掌握、二次开发、开源贡献或内部培训。
+- 学习者基础：语言、框架、领域知识和工程经验。
+- 时间预算：几天、几周还是几个月。
+- 深度目标：会用、会改、会复现、会解释，还是能经受面试追问。
 
-If the answer is discoverable from the project or conversation, inspect that first instead of asking.
+如果答案能从项目或对话上下文中确认，先阅读项目，不要直接问用户。
 
-## Fact Boundary
+## 事实边界
 
-Read the project before designing the path:
-- README and docs define positioning and intended users.
-- Directory structure reveals module boundaries.
-- Type definitions, interfaces, core classes, and tests define real abstractions.
-- Examples and scripts reveal the intended learning or usage path.
+设计路径前必须先读项目：
+- README 和文档定义项目定位与目标用户。
+- 目录结构暴露模块边界。
+- 类型定义、接口、核心类和测试定义真实抽象。
+- 示例和脚本暴露推荐的使用路径或学习路径。
 
-Do not infer protocol fields, struct fields, JSON keys, or architecture layers from natural-language nouns alone. Verify them in code or type definitions.
+不要仅凭自然语言名词推断协议字段、结构体字段、JSON key 或架构层级。必须从代码或类型定义中确认。
 
-## Course Design Workflow
+## 课程设计流程
 
-### 1. Define The Final Capability
+### 1. 定义最终能力
 
-Use this format:
-
-```markdown
-Final goal:
-After the course, the learner can ...
-
-Final artifacts:
-- Runnable demo:
-- Explainable architecture:
-- Personal extension:
-- Resume bullet:
-- Interview Q&A:
-```
-
-For resume-oriented learning, require a runnable project, a personal modification, architecture explanation, technical tradeoffs, and interview defense points.
-
-### 2. Decompose Into Milestones
-
-Prefer ability order over repository order.
-
-Default milestone ladder:
+使用这个格式：
 
 ```markdown
-Stage 0: Project positioning
-Understand what problem the project solves and why it matters.
+最终目标：
+学完课程后，学习者能够……
 
-Stage 1: Minimal working loop
-Run the smallest input-to-output path.
-
-Stage 2: Core concepts
-Learn only the concepts required to explain the working loop.
-
-Stage 3: Code verification
-Trace, debug, or modify the code that implements those concepts.
-
-Stage 4: Framework understanding
-Identify modules, interfaces, extension points, lifecycle, and data flow.
-
-Stage 5: Rebuild the core
-Hand-write a minimal version of the key mechanism.
-
-Stage 6: Real project
-Build or extend a complete, demonstrable application.
-
-Stage 7: Expression and interview defense
-Produce resume wording, architecture narrative, tradeoffs, and likely follow-up answers.
+最终产物：
+- 可运行 Demo：
+- 可讲解架构：
+- 个人改造点：
+- 简历描述：
+- 面试问答：
 ```
 
-### 3. Use The Same Loop For Every Milestone
+如果目标是简历项目，必须要求学习者产出可运行项目、个人改造点、架构解释、技术取舍和面试追问答案。
 
-Each milestone must include:
+### 2. 拆解阶段节点
+
+优先按能力成长顺序组织课程，不要按仓库目录机械展开。
+
+默认阶段阶梯：
 
 ```markdown
-Milestone:
+阶段 0：项目定位
+理解项目解决什么问题，以及为什么值得学习。
 
-Learning objective:
-What the learner can do after this node.
+阶段 1：最小运行闭环
+跑通最小输入到输出路径。
 
-First-principles question:
-Why does this mechanism exist? What breaks without it?
+阶段 2：核心概念
+只学习解释最小闭环必须用到的概念。
 
-Core concepts:
-Only the concepts needed for this node.
+阶段 3：代码验证
+追踪、调试或修改实现这些概念的关键代码。
 
-Project evidence:
-Docs, files, types, functions, tests, or examples that prove the facts.
+阶段 4：框架理解
+识别模块、接口、扩展点、生命周期和数据流。
 
-Code task:
-Run, trace, modify, or rebuild a minimal example.
+阶段 5：复现核心机制
+手写关键机制的最小版本。
 
-Advanced task:
-Abstract the mechanism or apply it to a more realistic scenario.
+阶段 6：真实项目
+构建或扩展一个完整、可展示的应用。
 
-Acceptance criteria:
-How the learner proves mastery.
-
-Common traps:
-Surface-level API use, wrong abstraction boundaries, missing failure cases, or weak interview explanation.
+阶段 7：表达与面试
+沉淀简历表述、架构讲解、技术取舍和高频追问答案。
 ```
 
-### 4. Use The Wheel Pattern
+### 3. 每个节点使用同一个学习闭环
 
-Do not start with a full rewrite. Do not stop at framework calls.
-
-Follow this sequence:
+每个阶段节点都必须包含：
 
 ```markdown
-Use the wheel:
-Run the existing project or framework to build intuition.
+节点名称：
 
-Open the wheel:
-Read the key path and understand why the modules exist.
+学习目标：
+这一节结束后，学习者能做什么。
 
-Build a small wheel:
-Reimplement the minimal mechanism by hand.
+第一性问题：
+这个机制为什么存在？如果没有它，会坏在哪里？
 
-Modify the wheel:
-Add a personal extension that can become a project highlight.
+核心概念：
+只讲本节点必须理解的概念。
+
+项目依据：
+用于确认事实的文档、文件、类型、函数、测试或示例。
+
+代码任务：
+运行、追踪、修改或复现一个最小例子。
+
+进阶任务：
+把机制抽象出来，或应用到更真实的场景。
+
+验收标准：
+学习者如何证明自己真的掌握了。
+
+常见误区：
+只会表层 API 调用、抽象边界错误、忽略失败场景、面试解释薄弱。
 ```
 
-Mastery means the learner can compare the existing implementation with their simplified rebuild and explain the tradeoffs.
+### 4. 使用“用轮子、拆轮子、造轮子、改轮子”模式
 
-## Output Structure
+不要一开始就完整重写，也不要停留在框架调用。
 
-When asked to design a course, output:
+按这个顺序推进：
 
 ```markdown
-# Project Learning Course
+用轮子：
+先跑通现有项目或框架，建立整体直觉。
 
-## 1. Final Goal
-## 2. Learner Baseline And Prerequisites
-## 3. Project Value
-## 4. Ability Map
-## 5. Stage Plan
-## 6. Acceptance Criteria
-## 7. Final Project Requirements
-## 8. Resume And Interview Assets
-## 9. Parts To Skip Or Defer
-## 10. Next Action
+拆轮子：
+阅读关键路径，理解模块为什么存在。
+
+造小轮子：
+手写最小版本，复现关键机制。
+
+改轮子：
+加入个人扩展，形成可写进简历的亮点。
 ```
 
-## Common Mistakes
+真正掌握的标准是：学习者能比较原项目实现和自己的最小复现版本，并讲清二者取舍。
 
-- Explaining files in repository order instead of ability order.
-- Starting with too many concepts before the learner has a working loop.
-- Teaching framework APIs without explaining the mechanism they hide.
-- Building toy demos without moving into a real project.
-- Skipping the personal extension, which makes the resume project generic.
-- Ending without interview questions, tradeoffs, and failure cases.
+## 输出结构
+
+当用户要求设计课程时，输出：
+
+```markdown
+# 项目学习课程
+
+## 1. 最终目标
+## 2. 学习者基础与前置要求
+## 3. 项目核心价值
+## 4. 能力地图
+## 5. 阶段计划
+## 6. 验收标准
+## 7. 最终项目要求
+## 8. 简历与面试资产
+## 9. 建议跳过或后置的部分
+## 10. 下一步行动
+```
+
+## 常见错误
+
+- 按仓库目录讲文件，而不是按能力成长设计课程。
+- 还没跑通最小闭环，就堆太多概念。
+- 只教框架 API，不解释 API 背后的机制。
+- 只做玩具 Demo，不进入真实项目。
+- 缺少个人改造点，导致简历项目没有辨识度。
+- 结尾没有面试问题、技术取舍和失败场景。
